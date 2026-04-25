@@ -1,0 +1,6 @@
+Sempre que você mudar algo no seu projeto:
+
+Você precisa rodar isso:
+git add .
+git commit -m "atualização"
+git push
