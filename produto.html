@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto - NexaOfertas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f1f3f6;
+}
+
+/* TOPO */
+.topbar{
+  background:#131921;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  padding:25px 40px;
+  gap:20px;
+}
+
+.topbar .logo img{
+  height:70px;
+}
+
+.search{flex:1;}
+
+.search h1{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.search input{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+}
+
+/* CARRINHO */
+.actions{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:14px;
+}
+
+/* MENU */
+.menu{
+  background:#232f3e;
+  display:flex;
+  justify-content:center;
+  gap:80px;
+  padding:14px;
+}
+
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.menu a:hover{
+  color:#ff9900;
+}
+
+/* PRODUTO */
+.produto-container{
+  max-width:1100px;
+  margin:40px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.produto-img{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.produto-img img{
+  width:100%;
+  max-width:350px;
+  border-radius:10px;
+}
+
+.produto-info{
+  flex:1;
+}
+
+.produto-info h1{
+  margin-bottom:15px;
+}
+
+.preco{
+  font-size:28px;
+  color:#b12704;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+
+/* BOTÃO */
+.botao{
+  display:block;
+  text-align:center;
+  background:linear-gradient(135deg,#00c853,#00e676);
+  color:#fff;
+  padding:15px;
+  border-radius:8px;
+  text-decoration:none;
+  margin-bottom:10px;
+}
+
+.voltar{
+  text-decoration:none;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+<div class="topbar">
+  <div class="logo">
+    <img src="img/logo_nexa_transparente.png">
+  </div>
+
+  <div class="search">
+    <h1>O melhor preço é aqui!</h1>
+    <input type="text" placeholder="Buscar produtos">
+  </div>
+
+  <div class="actions">
+    <span>🛒 Carrinho (0)</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+  <a href="#">Eletrônicos</a>
+  <a href="#">Informática</a>
+  <a href="#">Acessórios</a>
+  <a href="#">Casa</a>
+  <a href="#">Ofertas do Dia</a>
+</div>
+
+<!-- PRODUTO -->
+<div class="produto-container">
+
+  <div class="produto-img">
+    <img id="imagem">
+  </div>
+
+  <div class="produto-info">
+    <h1 id="nome"></h1>
+    <p class="preco" id="preco"></p>
+
+    <a id="link" class="botao" target="_blank">🔥 Ver oferta</a>
+
+    <a href="index.html" class="voltar">⬅ Voltar</a>
+  </div>
+
+</div>
+
+<script>
+// PEGAR ID
+const params = new URLSearchParams(window.location.search);
+let id = params.get("id");
+
+// PRODUTOS
+const produtos = [
+  {
+    id: "1",
+    nome: "Notebook Gamer",
+    preco: "R$ 3.499",
+    imagem: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+    link: "https://seulinkafiliado.com"
+  },
+  {
+    id: "2",
+    nome: "Smartphone Top",
+    preco: "R$ 1.999",
+    imagem: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    link: "https://seulinkafiliado.com"
+  }
+];
+
+// 🔥 CORREÇÃO: se não tiver ID, usa o primeiro produto
+if(!id){
+  id = "1";
+}
+
+// BUSCAR PRODUTO
+const produto = produtos.find(p => p.id === id);
+
+// MOSTRAR
+if(produto){
+  document.getElementById("nome").innerText = produto.nome;
+  document.getElementById("preco").innerText = produto.preco;
+  document.getElementById("imagem").src = produto.imagem;
+  document.getElementById("link").href = produto.link;
+}else{
+  alert("Produto não encontrado");
+  window.location.href = "index.html";
+}
+</script>
+
+<script src="js/carrinho.js"></script>
+
+</body>
+</html>

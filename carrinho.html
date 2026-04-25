@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho - NexaOfertas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f1f3f6}
+
+/* TOPO */
+.topbar{
+  background:#131921;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  padding:40px 40px;
+  gap:20px;
+}
+
+.logo img{
+  height:90px;
+}
+
+.search{flex:1}
+
+.search input{
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:none;
+}
+
+.actions{
+  display:flex;
+  gap:20px;
+}
+
+.actions span{cursor:pointer}
+
+/* MENU */
+.menu{
+  background:#232f3e;
+  padding:10px 30px;
+}
+
+.menu ul{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:80px;
+}
+
+.menu li{
+  color:#fff;
+  cursor:pointer;
+}
+
+.menu li:hover{color:#ff9900}
+
+/* CONTEÚDO */
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+}
+
+h1{
+  margin-bottom:20px;
+}
+
+/* ITEM */
+.item{
+  background:#fff;
+  padding:15px;
+  margin-bottom:10px;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* TOTAL */
+.total{
+  font-size:20px;
+  font-weight:bold;
+  margin-top:20px;
+  text-align:right;
+}
+
+/* BOTÕES */
+button{
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.remover{
+  background:#ff5252;
+  color:#fff;
+}
+
+.comprar{
+  background:#00c853;
+  color:#fff;
+  width:100%;
+  margin-top:20px;
+}
+
+.limpar{
+  background:#555;
+  color:#fff;
+  width:100%;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+<div class="topbar">
+  <div class="logo">
+    <img src="img/logo_nexa_transparente.png">
+  </div>
+
+  <div class="search">
+    <h1>Seu Carrinho</h1>
+    <input type="text" placeholder="Buscar produtos">
+  </div>
+
+  <div class="actions">
+    <span>👤 Login</span>
+    <span onclick="verCarrinho()">🛒 Carrinho (<span id="contador">0</span>)</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+  <ul>
+    <li>Eletrônicos</li>
+    <li>Informática</li>
+    <li>Acessórios</li>
+    <li>Casa</li>
+    <li>Ofertas do Dia</li>
+  </ul>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="container">
+
+  <h1>🛒 Seu Carrinho</h1>
+
+  <div id="lista"></div>
+
+  <div class="total" id="total"></div>
+
+  <button class="comprar" onclick="comprarTudo()">💰 Comprar tudo</button>
+  <button class="limpar" onclick="limparCarrinho()">🗑 Limpar carrinho</button>
+
+  <br><br>
+  <a href="index.html">⬅ Voltar para loja</a>
+
+</div>
+
+<script src="js/carrinho.js"></script>
+
+</body>
+</html>

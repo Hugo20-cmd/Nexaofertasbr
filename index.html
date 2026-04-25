@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexaOfertas</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -22,7 +23,6 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 
 .logo img{
   height:90px;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
 }
 
 .search{flex:1}
@@ -32,13 +32,11 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
   padding:12px;
   border-radius:6px;
   border:none;
-  font-size:14px;
 }
 
 .actions{
   display:flex;
   gap:20px;
-  font-size:14px;
 }
 
 .actions span{cursor:pointer}
@@ -52,13 +50,12 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 .menu ul{
   list-style:none;
   display:flex;
-  justify-content:center; /* 👈 ESSA LINHA RESOLVE */
+  justify-content:center;
   gap:80px;
 }
 
 .menu li{
   color:#fff;
-  font-size:14px;
   cursor:pointer;
 }
 
@@ -70,6 +67,7 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
   max-width:1200px;
   margin: 0 auto;
 }
+
 .grid{
   display:grid;
   grid-template-columns: repeat(auto-fill, 260px);
@@ -116,7 +114,6 @@ footer{
   color:#fff;
   text-align:center;
   padding:20px;
-  font-size:13px;
 }
 </style>
 </head>
@@ -126,17 +123,17 @@ footer{
 <!-- TOPO -->
 <div class="topbar">
   <div class="logo">
-    <img src="img/logo_nexa_transparente.png" alt="NexaOfertas">
+    <img src="img/logo_nexa_transparente.png">
   </div>
-    
+
   <div class="search">
     <h1>O melhor preço é aqui!</h1>
-    <input type="text" placeholder="Buscar produtos na NexaOfertas">
+    <input type="text" placeholder="Buscar produtos">
   </div>
+
   <div class="actions">
     <span>👤 Olá, faça seu login</span>
-    <span>🛒 Carrinho</span>
-    
+    <span onclick="verCarrinho()">🛒 Carrinho (<span id="contador">0</span>)</span>
   </div>
 </div>
 
@@ -155,43 +152,55 @@ footer{
 <div class="container">
   <div class="grid">
 
+    <!-- PRODUTO 1 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
       <div class="card-body">
         <h3>Smartphone Premium</h3>
         <p>Alta performance e câmera top</p>
         <div class="price">R$ 1.999</div>
-        <a href="#" class="btn">Ver oferta</a>
+        <a href="produto.html?nome=Smartphone Premium&preco=1999&img=https://images.unsplash.com/photo-1511707171634-5f897ff02aa9&link=https://google.com" class="btn">
+          Ver oferta
+        </a>
       </div>
     </div>
 
+    <!-- PRODUTO 2 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
       <div class="card-body">
         <h3>Notebook Ultra</h3>
         <p>Velocidade para trabalho e estudos</p>
         <div class="price">R$ 3.499</div>
-        <a href="#" class="btn">Ver oferta</a>
+        <a href="produto.html?nome=Notebook Ultra&preco=3499&img=https://images.unsplash.com/photo-1517336714731-489689fd1ca8&link=https://google.com" class="btn">
+          Ver oferta
+        </a>
       </div>
     </div>
 
+    <!-- PRODUTO 3 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1518441902110-93c9d9e7c6e7">
       <div class="card-body">
         <h3>Fone Bluetooth</h3>
         <p>Som potente e confortável</p>
         <div class="price">R$ 199</div>
-        <a href="#" class="btn">Ver oferta</a>
+        <a href="produto.html?nome=Fone Bluetooth&preco=199&img=https://images.unsplash.com/photo-1518441902110-93c9d9e7c6e7&link=https://google.com" class="btn">
+          Ver oferta
+        </a>
       </div>
     </div>
 
+    <!-- PRODUTO 4 -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1585386959984-a41552231658">
       <div class="card-body">
         <h3>Smartwatch</h3>
         <p>Monitore sua saúde</p>
         <div class="price">R$ 299</div>
-        <a href="#" class="btn">Ver oferta</a>
+        <a href="produto.html?nome=Smartwatch&preco=299&img=https://images.unsplash.com/photo-1585386959984-a41552231658&link=https://google.com" class="btn">
+          Ver oferta
+        </a>
       </div>
     </div>
 
@@ -200,8 +209,9 @@ footer{
 
 <footer>
   <p>© 2026 NexaOfertas - Todos os direitos reservados</p>
-
 </footer>
+
 <script src="js/carrinho.js"></script>
+
 </body>
 </html>
