@@ -162,6 +162,25 @@ footer{
   .menu ul{
     gap:20px;
   }
+  @media (max-width: 768px){
+
+  .menu ul{
+    justify-content:flex-start;
+    gap:20px;
+    overflow-x:auto;
+    white-space:nowrap;
+    padding: 0 10px;
+  }
+
+  .menu ul::-webkit-scrollbar{
+    display:none;
+  }
+
+  .menu li{
+    flex:0 0 auto;
+  }
+
+}
 
 }
 </style>
