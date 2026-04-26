@@ -22,9 +22,7 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
   flex-wrap: wrap;
 }
 
-.logo img{
-  height:90px;
-}
+.logo img{height:90px;}
 
 .search{
   flex:1;
@@ -46,7 +44,7 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 
 .actions span{cursor:pointer}
 
-/* MENU */
+/* MENU (DESKTOP NORMAL) */
 .menu{
   background:#232f3e;
   padding:10px;
@@ -55,19 +53,13 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 .menu ul{
   list-style:none;
   display:flex;
-  gap:20px;
-  overflow-x:auto;
-  white-space:nowrap;
-  padding-bottom:5px;
-}
-.menu ul::-webkit-scrollbar{
-  display:none;
+  justify-content:center;
+  gap:40px;
 }
 
 .menu li{
   color:#fff;
   cursor:pointer;
-  flex:0 0 auto;
 }
 
 .menu li:hover{color:#ff9900}
@@ -104,7 +96,6 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 .card-body{padding:15px}
 
 .card-body h3{font-size:16px;margin-bottom:8px}
-
 .card-body p{font-size:13px;color:#555;margin-bottom:8px}
 
 .price{
@@ -135,7 +126,7 @@ footer{
   padding:20px;
 }
 
-/* RESPONSIVO */
+/* 📱 MOBILE */
 @media (max-width: 768px){
 
   .topbar{
@@ -145,9 +136,7 @@ footer{
     padding:20px;
   }
 
-  .logo img{
-    height:60px;
-  }
+  .logo img{height:60px;}
 
   .search h1{
     font-size:22px;
@@ -159,11 +148,7 @@ footer{
     gap:10px;
   }
 
-  .menu ul{
-    gap:20px;
-  }
-  @media (max-width: 768px){
-
+  /* MENU MOBILE COM SCROLL */
   .menu ul{
     justify-content:flex-start;
     gap:20px;
@@ -179,8 +164,6 @@ footer{
   .menu li{
     flex:0 0 auto;
   }
-
-}
 
 }
 </style>
