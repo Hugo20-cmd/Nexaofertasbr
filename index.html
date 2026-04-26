@@ -55,14 +55,19 @@ body{font-family:'Poppins',sans-serif;background:#f1f3f6}
 .menu ul{
   list-style:none;
   display:flex;
-  justify-content:center;
-  gap:60px;
-  flex-wrap:wrap;
+  gap:20px;
+  overflow-x:auto;
+  white-space:nowrap;
+  padding-bottom:5px;
+}
+.menu ul::-webkit-scrollbar{
+  display:none;
 }
 
 .menu li{
   color:#fff;
   cursor:pointer;
+  flex:0 0 auto;
 }
 
 .menu li:hover{color:#ff9900}
